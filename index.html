@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy Shop | Celulares Samsung</title>
+
+<!-- CAPA DE PRESENTACIÓN: solo estilos, sin lógica -->
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo"><span class="dot"></span>Galaxy Shop</div>
+    <nav class="main-nav">
+      <a href="#serie-s">Serie S</a>
+      <a href="#plegables">Plegables</a>
+      <a href="#serie-a">Serie A</a>
+      <a href="#accesorios">Accesorios</a>
+      <a href="#ofertas">Ofertas</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Buscar">🔍</button>
+      <button class="icon-btn" aria-label="Carrito" id="cartToggle">
+        🛍️
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">GALAXY S25 ULTRA</div>
+      <h1>El celular que piensa un paso antes que tú.</h1>
+      <p>IA integrada, cámara de 200MP y la pantalla más nítida que ha hecho Samsung. Reserva hoy y llévate hasta $1.500.000 de descuento por tu equipo actual.</p>
+      <div class="hero-ctas">
+        <a href="#serie-s" class="btn-primary">Comprar ahora</a>
+        <a href="#serie-s" class="btn-ghost">Ver especificaciones</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>200MP</b><span>Cámara principal</span></div>
+        <div><b>5000mAh</b><span>Batería</span></div>
+        <div><b>Galaxy AI</b><span>Incluida</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-graphic"></div>
+      <div class="phone-graphic-2"></div>
+    </div>
+  </div>
+</section>
+
+<div class="cat-strip">
+  <button class="cat-chip active" data-filter="all">Todos</button>
+  <button class="cat-chip" data-filter="s">Serie S</button>
+  <button class="cat-chip" data-filter="fold">Plegables</button>
+  <button class="cat-chip" data-filter="a">Serie A</button>
+  <button class="cat-chip" data-filter="m">Serie M</button>
+</div>
+
+<section class="section" id="serie-s">
+  <div class="section-head">
+    <div>
+      <h2>Elige tu Galaxy</h2>
+      <p>Financiación disponible a 24 meses. Envío gratis a todo el país.</p>
+    </div>
+    <a href="#" class="see-all">Ver catálogo completo →</a>
+  </div>
+
+  <div class="grid" id="productGrid"></div>
+</section>
+
+<div class="promo">
+  <div class="promo-inner">
+    <div>
+      <h3>Entrega tu celular actual, paga menos por el nuevo</h3>
+      <p>Evaluamos tu equipo al instante y descontamos su valor directo del precio del Galaxy que elijas, sin trámites adicionales.</p>
+      <a href="#" class="btn-dark">Calcular mi descuento</a>
+    </div>
+    <div class="promo-visual">
+      <div class="fold-graphic"></div>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="trust">
+    <div class="trust-item">
+      <div class="ic">🚚</div>
+      <b>Envío en 24-48h</b>
+      <span>A todas las ciudades principales</span>
+    </div>
+    <div class="trust-item">
+      <div class="ic">🔒</div>
+      <b>Pago seguro</b>
+      <span>Tarjeta, PSE o contraentrega</span>
+    </div>
+    <div class="trust-item">
+      <div class="ic">🛠️</div>
+      <b>Garantía oficial</b>
+      <span>12 meses con Samsung</span>
+    </div>
+    <div class="trust-item">
+      <div class="ic">↩️</div>
+      <b>Devolución fácil</b>
+      <span>30 días sin preguntas</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="dot"></span>Galaxy Shop</div>
+        <p>Tienda especializada en celulares Samsung Galaxy: Serie S, plegables, Serie A y accesorios originales.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Comprar</h4>
+        <a href="#">Serie S</a>
+        <a href="#">Plegables</a>
+        <a href="#">Serie A</a>
+        <a href="#">Ofertas</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <a href="#">Estado del pedido</a>
+        <a href="#">Envíos</a>
+        <a href="#">Garantía</a>
+        <a href="#">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Tiendas físicas</a>
+        <a href="#">Trabaja con nosotros</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Galaxy Shop. Tienda independiente, no afiliada a Samsung Electronics.</span>
+      <span>Medellín, Colombia</span>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Tu carrito</h3>
+    <button class="close-drawer" id="closeDrawer">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot" style="display:none;">
+    <div class="drawer-total"><span>Total</span><span id="drawerTotal">$0</span></div>
+    <button class="checkout-btn">Finalizar compra</button>
+  </div>
+</div>
+
+<!--
+  ============================================================
+  CARGA DE CAPAS (el orden importa: de abajo hacia arriba)
+  ============================================================
+  1) Datos            -> 2) Acceso a Datos -> 3) Negocio -> 4) Presentación -> 5) App (orquesta)
+-->
+
+<!-- 1. Capa de Datos -->
+<script src="js/data/products.data.js"></script>
+
+<!-- 2. Capa de Acceso a Datos (Repositorio) -->
+<script src="js/data/product.repository.js"></script>
+
+<!-- 3. Capa de Lógica de Negocio (Servicios) -->
+<script src="js/business/product.service.js"></script>
+<script src="js/business/cart.service.js"></script>
+
+<!-- 4. Capa de Presentación (Vistas) -->
+<script src="js/presentation/product-grid.view.js"></script>
+<script src="js/presentation/cart-drawer.view.js"></script>
+<script src="js/presentation/category-filter.view.js"></script>
+
+<!-- 5. Capa de Aplicación (conecta todas las capas) -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
