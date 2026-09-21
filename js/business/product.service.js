@@ -8,11 +8,22 @@
  */
 const ProductService = (() => {
   function listByFilter(filter = 'all') {
+    if (filter === 'sale') {
+      return ProductRepository.getAll().filter(p => p.badge === 'sale');
+    }
     return ProductRepository.getByCategory(filter);
   }
 
   function findProduct(id) {
     return ProductRepository.getById(id);
+  }
+
+  function search(term) {
+    const clean = (term || '').trim().toLowerCase();
+    if (!clean) return ProductRepository.getAll();
+    return ProductRepository.getAll().filter(p =>
+      p.name.toLowerCase().includes(clean) || p.spec.toLowerCase().includes(clean)
+    );
   }
 
   function formatPrice(amount) {

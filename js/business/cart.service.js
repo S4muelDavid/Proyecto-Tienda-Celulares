@@ -42,5 +42,9 @@ const CartService = (() => {
     return items.length === 0;
   }
 
-  return { addItem, removeItem, getItems, getTotalQty, getTotalPrice, isEmpty };
+  function clear() {
+    items = [];
+  }
+
+  return { addItem, removeItem, getItems, getTotalQty, getTotalPrice, isEmpty, clear };
 })();

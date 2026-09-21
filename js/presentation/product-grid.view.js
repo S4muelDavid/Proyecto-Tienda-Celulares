@@ -12,6 +12,24 @@ const ProductGridView = (() => {
 
   function render(filter = 'all') {
     const list = ProductService.listByFilter(filter);
+    renderList(list);
+  }
+
+  function renderSearch(term) {
+    const list = ProductService.search(term);
+    renderList(list, term);
+  }
+
+  function renderList(list, term) {
+    if (!list.length) {
+      const safeTerm = term ? String(term).replace(/[<>&"]/g, '') : '';
+      gridEl.innerHTML = `
+        <div class="grid-empty">
+          <b>No encontramos resultados${safeTerm ? ` para "${safeTerm}"` : ''}</b>
+          <span>Prueba con otro modelo, ej: A55, Z Fold, S25.</span>
+        </div>`;
+      return;
+    }
     gridEl.innerHTML = list.map(cardTemplate).join('');
   }
 
@@ -35,7 +53,7 @@ const ProductGridView = (() => {
             <div style="position:absolute;inset:6px;border-radius:14px;background:${p.grad};opacity:.85;"></div>
           </div>
         </div>
-        <div class="card-cat">Samsung Galaxy</div>
+        <div class="card-cat">Celulares Ss</div>
         <h3>${p.name}</h3>
         <div class="spec">${p.spec}</div>
         <div class="colors">${colorsHtml}</div>
@@ -71,5 +89,5 @@ const ProductGridView = (() => {
     });
   }
 
-  return { render, bindEvents };
+  return { render, renderSearch, bindEvents };
 })();

@@ -23,7 +23,7 @@ const CartDrawerView = (() => {
         <div class="drawer-empty">
           <div class="emoji">🛍️</div>
           <div>Tu carrito está vacío</div>
-          <div style="font-size:12.5px;">Agrega un Galaxy para empezar</div>
+          <div style="font-size:12.5px;">Agrega un Ss para empezar</div>
         </div>`;
       drawerFootEl.style.display = 'none';
       return;
@@ -64,10 +64,15 @@ const CartDrawerView = (() => {
     drawerEl.classList.remove('open');
   }
 
-  function bindEvents() {
+  function bindEvents({ onCheckout } = {}) {
     document.getElementById('cartToggle').addEventListener('click', open);
     document.getElementById('closeDrawer').addEventListener('click', close);
     overlayEl.addEventListener('click', close);
+
+    document.getElementById('checkoutBtn').addEventListener('click', () => {
+      if (CartService.isEmpty()) return;
+      if (typeof onCheckout === 'function') onCheckout();
+    });
   }
 
   return { render, open, close, bindEvents };

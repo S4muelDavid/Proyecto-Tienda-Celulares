@@ -3,49 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galaxy Shop | Celulares Samsung</title>
+<title>Celulares Ss</title>
 
 <!-- CAPA DE PRESENTACIÓN: solo estilos, sin lógica -->
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<body>
-
 <header>
   <div class="header-inner">
-    <div class="logo"><span class="dot"></span>Galaxy Shop</div>
+    <div class="logo"><span class="dot"></span>Celulares Ss</div>
     <nav class="main-nav">
-      <a href="#serie-s">Serie S</a>
-      <a href="#plegables">Plegables</a>
-      <a href="#serie-a">Serie A</a>
-      <a href="#accesorios">Accesorios</a>
-      <a href="#ofertas">Ofertas</a>
+      <a href="#serie-s" data-nav-filter="s">Serie S</a>
+      <a href="#serie-s" data-nav-filter="fold">Plegables</a>
+      <a href="#serie-s" data-nav-filter="a">Serie A</a>
+      <a href="#" data-nav-info="accessories">Accesorios</a>
+      <a href="#serie-s" data-nav-filter="sale">Ofertas</a>
     </nav>
     <div class="header-actions">
-      <button class="icon-btn" aria-label="Buscar">🔍</button>
+      <button class="icon-btn" aria-label="Buscar" id="searchToggle">🔍</button>
       <button class="icon-btn" aria-label="Carrito" id="cartToggle">
         🛍️
         <span class="cart-count" id="cartCount">0</span>
       </button>
     </div>
   </div>
+  <div class="search-bar" id="searchBar">
+    <div class="search-bar-inner">
+      <span>🔍</span>
+      <input type="text" id="searchInput" placeholder="Busca un modelo, ej: A55, Z Fold, S25...">
+      <button class="search-clear" id="searchClear" aria-label="Cerrar búsqueda">✕</button>
+    </div>
+    <div class="search-status" id="searchStatus"></div>
+  </div>
 </header>
 
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">GALAXY S25 ULTRA</div>
+      <div class="hero-eyebrow">SS S25 ULTRA</div>
       <h1>El celular que piensa un paso antes que tú.</h1>
-      <p>IA integrada, cámara de 200MP y la pantalla más nítida que ha hecho Samsung. Reserva hoy y llévate hasta $1.500.000 de descuento por tu equipo actual.</p>
+      <p>IA integrada, cámara de 200MP y la pantalla más nítida que ha hecho Ss. Reserva hoy y llévate hasta $1.500.000 de descuento por tu equipo actual.</p>
       <div class="hero-ctas">
-        <a href="#serie-s" class="btn-primary">Comprar ahora</a>
-        <a href="#serie-s" class="btn-ghost">Ver especificaciones</a>
+        <a href="#serie-s" class="btn-primary" id="btnBuyNow">Comprar ahora</a>
+        <button class="btn-ghost" id="btnSpecs">Ver especificaciones</button>
       </div>
       <div class="hero-stats">
         <div><b>200MP</b><span>Cámara principal</span></div>
         <div><b>5000mAh</b><span>Batería</span></div>
-        <div><b>Galaxy AI</b><span>Incluida</span></div>
+        <div><b>Ss AI</b><span>Incluida</span></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -66,10 +72,10 @@
 <section class="section" id="serie-s">
   <div class="section-head">
     <div>
-      <h2>Elige tu Galaxy</h2>
+      <h2>Elige tu Ss</h2>
       <p>Financiación disponible a 24 meses. Envío gratis a todo el país.</p>
     </div>
-    <a href="#" class="see-all">Ver catálogo completo →</a>
+    <button class="see-all" id="btnSeeAll">Ver catálogo completo →</button>
   </div>
 
   <div class="grid" id="productGrid"></div>
@@ -79,8 +85,8 @@
   <div class="promo-inner">
     <div>
       <h3>Entrega tu celular actual, paga menos por el nuevo</h3>
-      <p>Evaluamos tu equipo al instante y descontamos su valor directo del precio del Galaxy que elijas, sin trámites adicionales.</p>
-      <a href="#" class="btn-dark">Calcular mi descuento</a>
+      <p>Evaluamos tu equipo al instante y descontamos su valor directo del precio del Ss que elijas, sin trámites adicionales.</p>
+      <button class="btn-dark" id="btnTradeIn">Calcular mi descuento</button>
     </div>
     <div class="promo-visual">
       <div class="fold-graphic"></div>
@@ -103,7 +109,7 @@
     <div class="trust-item">
       <div class="ic">🛠️</div>
       <b>Garantía oficial</b>
-      <span>12 meses con Samsung</span>
+      <span>12 meses con Ss</span>
     </div>
     <div class="trust-item">
       <div class="ic">↩️</div>
@@ -117,36 +123,46 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo"><span class="dot"></span>Galaxy Shop</div>
-        <p>Tienda especializada en celulares Samsung Galaxy: Serie S, plegables, Serie A y accesorios originales.</p>
+        <div class="logo"><span class="dot"></span>Celulares Ss</div>
+        <p>Tienda especializada en celulares Ss: Serie S, plegables, Serie A y accesorios originales.</p>
       </div>
       <div class="footer-col">
         <h4>Comprar</h4>
-        <a href="#">Serie S</a>
-        <a href="#">Plegables</a>
-        <a href="#">Serie A</a>
-        <a href="#">Ofertas</a>
+        <a href="#serie-s" data-nav-filter="s">Serie S</a>
+        <a href="#serie-s" data-nav-filter="fold">Plegables</a>
+        <a href="#serie-s" data-nav-filter="a">Serie A</a>
+        <a href="#serie-s" data-nav-filter="sale">Ofertas</a>
       </div>
       <div class="footer-col">
         <h4>Ayuda</h4>
-        <a href="#">Estado del pedido</a>
-        <a href="#">Envíos</a>
-        <a href="#">Garantía</a>
-        <a href="#">Contacto</a>
+        <a href="#" data-nav-info="orderStatus">Estado del pedido</a>
+        <a href="#" data-nav-info="shipping">Envíos</a>
+        <a href="#" data-nav-info="warranty">Garantía</a>
+        <a href="#" data-nav-info="contact">Contacto</a>
       </div>
       <div class="footer-col">
         <h4>Empresa</h4>
-        <a href="#">Sobre nosotros</a>
-        <a href="#">Tiendas físicas</a>
-        <a href="#">Trabaja con nosotros</a>
+        <a href="#" data-nav-info="about">Sobre nosotros</a>
+        <a href="#" data-nav-info="stores">Tiendas físicas</a>
+        <a href="#" data-nav-info="careers">Trabaja con nosotros</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Galaxy Shop. Tienda independiente, no afiliada a Samsung Electronics.</span>
+      <span>© 2026 Celulares Ss. Tienda independiente, no afiliada a Ss Electronics.</span>
       <span>Medellín, Colombia</span>
     </div>
   </div>
 </footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="modalTitle"></h3>
+      <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
 
 <div class="overlay" id="overlay"></div>
 <div class="drawer" id="drawer">
@@ -157,7 +173,7 @@
   <div class="drawer-body" id="drawerBody"></div>
   <div class="drawer-foot" id="drawerFoot" style="display:none;">
     <div class="drawer-total"><span>Total</span><span id="drawerTotal">$0</span></div>
-    <button class="checkout-btn">Finalizar compra</button>
+    <button class="checkout-btn" id="checkoutBtn">Finalizar compra</button>
   </div>
 </div>
 
@@ -170,18 +186,26 @@
 
 <!-- 1. Capa de Datos -->
 <script src="js/data/products.data.js"></script>
+<script src="js/data/content.data.js"></script>
+<script src="js/data/trade-in.data.js"></script>
 
 <!-- 2. Capa de Acceso a Datos (Repositorio) -->
 <script src="js/data/product.repository.js"></script>
+<script src="js/data/content.repository.js"></script>
 
 <!-- 3. Capa de Lógica de Negocio (Servicios) -->
 <script src="js/business/product.service.js"></script>
 <script src="js/business/cart.service.js"></script>
+<script src="js/business/content.service.js"></script>
+<script src="js/business/trade-in.service.js"></script>
 
 <!-- 4. Capa de Presentación (Vistas) -->
+<script src="js/presentation/modal.view.js"></script>
 <script src="js/presentation/product-grid.view.js"></script>
 <script src="js/presentation/cart-drawer.view.js"></script>
 <script src="js/presentation/category-filter.view.js"></script>
+<script src="js/presentation/search.view.js"></script>
+<script src="js/presentation/site-actions.view.js"></script>
 
 <!-- 5. Capa de Aplicación (conecta todas las capas) -->
 <script src="js/app.js"></script>
